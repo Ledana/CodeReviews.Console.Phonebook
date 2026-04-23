@@ -7,18 +7,32 @@ namespace PhoneBook.Ledana.Controllers
     {
         internal static List<SMS> GetSMS()
         {
-            using var context = new ContactContext();
-            var SMSs = context.SMSs
-                .Include(s => s.Contact)
-                .ToList();
-            return SMSs;
+            try
+            {
+                using var context = new ContactContext();
+                var SMSs = context.SMSs
+                    .Include(s => s.Contact)
+                    .ToList();
+                return SMSs;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Couldn't get SMSs");
+            }
         }
 
         internal static void SendSMS(SMS sms)
         {
-            using var context = new ContactContext();
-            context.SMSs.Add(sms);
-            context.SaveChanges();
+            try
+            {
+                using var context = new ContactContext();
+                context.SMSs.Add(sms);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Couldn't send SMS");
+            }
         }
     }
 }
