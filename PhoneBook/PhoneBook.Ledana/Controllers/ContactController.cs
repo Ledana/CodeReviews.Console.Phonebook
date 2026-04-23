@@ -7,31 +7,59 @@ namespace PhoneBook.Ledana.Controllers
     {
         internal static void AddContact(Contact contact)
         {
-            using var context = new ContactContext();
-            context.Contacts.Add(contact);
-            context.SaveChanges();
+            try
+            {
+                using var context = new ContactContext();
+                context.Contacts.Add(contact);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Couldn't add the contact");
+            }
         }
 
         internal static void DeleteContact(Contact contact)
         {
-            using var context = new ContactContext();
-            context.Contacts.Remove(contact);
-            context.SaveChanges();
+            try
+            {
+                using var context = new ContactContext();
+                context.Contacts.Remove(contact);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Couldn't delete the contact");
+            }
         }
 
         internal static List<Contact> GetAllContacts()
         {
-            using var context = new ContactContext();
-            var contacts = context.Contacts.Include(c => c.Category)
-                .ToList();
-            return contacts;
+            try
+            {
+                using var context = new ContactContext();
+                var contacts = context.Contacts.Include(c => c.Category)
+                    .ToList();
+                return contacts;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Couldn't get contacts");
+            }
         }
 
         internal static void UpdateContact(Contact contact)
         {
-            using var context = new ContactContext();
-            context.Contacts.Update(contact);
-            context.SaveChanges();
+            try
+            {
+                using var context = new ContactContext();
+                context.Contacts.Update(contact);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Couldn't update the contact");
+            }
         }
         internal static bool ValidatePhoneNumber(string phoneNumber)
         {
