@@ -25,7 +25,7 @@ namespace PhoneBook.Ledana.Services;
             CategoryController.DeleteCategory(category);
         }
 
-        internal static Category GetCategoryOptionInput()
+        internal static Category? GetCategoryOptionInput()
         {
             List<Category> categories = CategoryController.GetCategories();
             if (categories.Count == 0)
