@@ -7,17 +7,31 @@ namespace PhoneBook.Ledana.Controllers
     {
         internal static void SendEmail(Email email)
         {
-            using var context = new ContactContext();
-            context.Emails.Add(email);
-            context.SaveChanges();
+            try
+            {
+                using var context = new ContactContext();
+                context.Emails.Add(email);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Couldn't send email");
+            }
         }
         internal static List<Email> GetEmails()
         {
-            using var context = new ContactContext();
-            var emails = context.Emails
-                .Include(e => e.Contact)
-                .ToList();
-            return emails;
+            try
+            {
+                using var context = new ContactContext();
+                var emails = context.Emails
+                    .Include(e => e.Contact)
+                    .ToList();
+                return emails;
+            }
+            catch
+            {
+                Console.WriteLine("Couldn't get emails");
+            }
         }
     }
 }
