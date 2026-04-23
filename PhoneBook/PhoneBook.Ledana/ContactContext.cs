@@ -3,8 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using PhoneBook.Ledana.Models;
 
-namespace PhoneBook.Ledana
-{
+namespace PhoneBook.Ledana;
     internal class ContactContext : DbContext
     {
         public DbSet<Contact> Contacts { get; set; }
@@ -162,6 +161,3 @@ namespace PhoneBook.Ledana
                 });
         }
     }
-
-    
-}

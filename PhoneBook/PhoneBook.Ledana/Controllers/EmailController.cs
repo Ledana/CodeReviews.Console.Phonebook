@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PhoneBook.Ledana.Models;
 
-namespace PhoneBook.Ledana.Controllers
-{
+namespace PhoneBook.Ledana.Controllers;
     internal class EmailController
     {
         internal static void SendEmail(Email email)
@@ -31,7 +30,7 @@ namespace PhoneBook.Ledana.Controllers
             catch
             {
                 Console.WriteLine("Couldn't get emails");
+            return [];
             }
         }
     }
-}

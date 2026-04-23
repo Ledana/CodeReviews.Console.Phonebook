@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PhoneBook.Ledana
-{
+namespace PhoneBook.Ledana;
     internal class Enums
     {
         internal enum MenuOptions
@@ -44,4 +43,3 @@ namespace PhoneBook.Ledana
             GoBack
         }
     }
-}

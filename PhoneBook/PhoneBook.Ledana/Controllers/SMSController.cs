@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PhoneBook.Ledana.Models;
 
-namespace PhoneBook.Ledana.Controllers
-{
+namespace PhoneBook.Ledana.Controllers;
     internal class SMSController
     {
         internal static List<SMS> GetSMS()
@@ -18,6 +17,7 @@ namespace PhoneBook.Ledana.Controllers
             catch (Exception e)
             {
                 Console.WriteLine("Couldn't get SMSs");
+            return [];
             }
         }
 
@@ -35,4 +35,3 @@ namespace PhoneBook.Ledana.Controllers
             }
         }
     }
-}

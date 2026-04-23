@@ -3,8 +3,7 @@ using PhoneBook.Ledana.Services;
 using Spectre.Console;
 using static PhoneBook.Ledana.Enums;
 
-namespace PhoneBook.Ledana
-{
+namespace PhoneBook.Ledana;
     internal class UserInterface
     {
         internal static void MainMenu()
@@ -267,4 +266,3 @@ Category: {contact.Category.Name}")
             Console.Clear();
         }
     }
-}

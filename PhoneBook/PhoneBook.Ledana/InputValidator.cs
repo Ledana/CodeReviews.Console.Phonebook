@@ -2,8 +2,7 @@
 using Spectre.Console;
 using System.Text.RegularExpressions;
 
-namespace PhoneBook.Ledana
-{
+namespace PhoneBook.Ledana;
     public static class InputValidator
     {
         public static string ValidateEmail()
@@ -41,4 +40,3 @@ namespace PhoneBook.Ledana
                 //&& !ContactController.ValidatePhoneNumber(phoneNumber);
         }
     }
-}

@@ -2,8 +2,7 @@
 using PhoneBook.Ledana.Models;
 using Spectre.Console;
 
-namespace PhoneBook.Ledana.Services
-{
+namespace PhoneBook.Ledana.Services;
     internal class CategoryServices
     {
         internal static void AddCategory()
@@ -63,4 +62,3 @@ namespace PhoneBook.Ledana.Services
             UserInterface.ViewCategories(categories);
         }
     }
-}

@@ -2,8 +2,7 @@
 using PhoneBook.Ledana.Models;
 using Spectre.Console;
 
-namespace PhoneBook.Ledana.Services
-{
+namespace PhoneBook.Ledana.Services;
     internal class EmailService
     {
         internal static void SendEmail()
@@ -28,4 +27,3 @@ namespace PhoneBook.Ledana.Services
             UserInterface.ViewEmails(emails);
         }
     }
-}

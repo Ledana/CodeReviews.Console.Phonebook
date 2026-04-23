@@ -2,8 +2,7 @@
 using PhoneBook.Ledana.Models;
 using Spectre.Console;
 
-namespace PhoneBook.Ledana.Services
-{
+namespace PhoneBook.Ledana.Services;
     internal class ContactService
     {
         internal static void AddContact()
@@ -89,4 +88,3 @@ namespace PhoneBook.Ledana.Services
             return contact;
         }
     }
-}

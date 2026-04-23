@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PhoneBook.Ledana.Models
-{
+namespace PhoneBook.Ledana.Models;
     internal class Email
     {
         public int Id { get; set; }
@@ -12,4 +11,3 @@ namespace PhoneBook.Ledana.Models
         public int ContactId { get; set; }
         public Contact? Contact { get; set; }
     }
-}

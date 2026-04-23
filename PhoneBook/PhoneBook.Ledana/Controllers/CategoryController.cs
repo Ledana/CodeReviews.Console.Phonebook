@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PhoneBook.Ledana.Models;
 
-namespace PhoneBook.Ledana.Controllers
-{
+namespace PhoneBook.Ledana.Controllers;
     internal class CategoryController
     {
         internal static List<Category> GetCategories()
@@ -18,6 +17,7 @@ namespace PhoneBook.Ledana.Controllers
             catch (Exception e)
             {
                 Console.WriteLine("Couldn't get the categories");
+            return [];
             }
         }
         internal static void AddCategory(Category category)
@@ -56,10 +56,9 @@ namespace PhoneBook.Ledana.Controllers
                 context.Categories.Update(category);
                 context.SaveChanges();
             }
-            cacth (Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Couldn't update the category");
             }
         }
     }
-}

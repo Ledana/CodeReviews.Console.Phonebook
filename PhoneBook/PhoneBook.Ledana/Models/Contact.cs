@@ -3,8 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PhoneBook.Ledana.Models
-{
+namespace PhoneBook.Ledana.Models;
     [Index(nameof(PhoneNumber), IsUnique = true)]
     internal class Contact
     {
@@ -18,4 +17,3 @@ namespace PhoneBook.Ledana.Models
         public List<Email> Emails { get; set; } = [];
         public List<SMS> SMSs { get; set; } = [];
     }
-}

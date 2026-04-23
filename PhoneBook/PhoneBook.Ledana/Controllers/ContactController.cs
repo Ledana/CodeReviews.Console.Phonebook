@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PhoneBook.Ledana.Models;
 
-namespace PhoneBook.Ledana.Controllers
-{
+namespace PhoneBook.Ledana.Controllers;
     internal class ContactController
     {
         internal static void AddContact(Contact contact)
@@ -45,6 +44,7 @@ namespace PhoneBook.Ledana.Controllers
             catch (Exception e)
             {
                 Console.WriteLine("Couldn't get contacts");
+            return [];
             }
         }
 
@@ -68,4 +68,3 @@ namespace PhoneBook.Ledana.Controllers
             return phoneNumberExists > 0;
         }
     }
-}
