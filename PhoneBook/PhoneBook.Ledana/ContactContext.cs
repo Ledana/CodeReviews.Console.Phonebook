@@ -23,9 +23,9 @@ namespace PhoneBook.Ledana
 
             var connectionString = config.GetConnectionString("ContactsDb");
 
-            optionsBuilder.UseSqlServer(connectionString)
-                .EnableSensitiveDataLogging()
-                .UseLoggerFactory(GetLoggerFactory());
+            optionsBuilder.UseSqlServer(connectionString);
+                //.EnableSensitiveDataLogging()
+                //.UseLoggerFactory(GetLoggerFactory());
         }
         private ILoggerFactory? GetLoggerFactory()
         {
