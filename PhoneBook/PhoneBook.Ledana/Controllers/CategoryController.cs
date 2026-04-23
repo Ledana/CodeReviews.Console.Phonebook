@@ -7,31 +7,59 @@ namespace PhoneBook.Ledana.Controllers
     {
         internal static List<Category> GetCategories()
         {
-            using var context = new ContactContext();
-            var categories = context.Categories
-                .Include(c => c.Contacts)
-                .ToList();
-            return categories;
+            try
+            {
+                using var context = new ContactContext();
+                var categories = context.Categories
+                    .Include(c => c.Contacts)
+                    .ToList();
+                return categories;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Couldn't get the categories");
+            }
         }
         internal static void AddCategory(Category category)
         {
-            using var context = new ContactContext();
-            context.Categories.Add(category);
-            context.SaveChanges();
+            try
+            {
+                using var context = new ContactContext();
+                context.Categories.Add(category);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Couldn't add the category");
+            }
         }
 
         internal static void DeleteCategory(Category category)
         {
-            using var context = new ContactContext();
-            context.Categories.Remove(category);
-            context.SaveChanges();
+            try
+            {
+                using var context = new ContactContext();
+                context.Categories.Remove(category);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Couldn't delete the category");
+            }
         }
 
         internal static void UpdateCategory(Category category)
         {
-            using var context = new ContactContext();
-            context.Categories.Update(category);
-            context.SaveChanges();
+            try
+            {
+                using var context = new ContactContext();
+                context.Categories.Update(category);
+                context.SaveChanges();
+            }
+            cacth (Exception e)
+            {
+                Console.WriteLine("Couldn't update the category");
+            }
         }
     }
 }
