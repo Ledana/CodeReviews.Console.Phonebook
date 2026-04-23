@@ -64,7 +64,7 @@ namespace PhoneBook.Ledana.Controllers;
         internal static bool ValidatePhoneNumber(string phoneNumber)
         {
             using var context = new ContactContext();
-            var phoneNumberExists = context.Contacts.Where(c => c.PhoneNumber == phoneNumber).Count();
-            return phoneNumberExists > 0;
+            var phoneNumberExists = context.Contacts.Where(c => c.PhoneNumber == phoneNumber).Any();
+            return phoneNumberExists;
         }
     }
